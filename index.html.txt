@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32 Bluetooth Controller</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(reg => console.log("✅ Service Worker Registered"))
+                .catch(err => console.log("❌ Service Worker Failed:", err));
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>ESP32 Bluetooth Controller</h1>
+        <button id="connectBtn">🔵 Connect to ESP32</button>
+        
+        <div class="joystick-container">
+            <div id="joystickLeft" class="joystick">
+                <div class="joystick-center"></div>
+            </div>
+            <div id="joystickRight" class="joystick">
+                <div class="joystick-center"></div>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button class="control-btn">Start</button>
+            <button class="control-btn">Stop</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
